@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+**Spring + React App**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application combines a Spring Boot backend with a React frontend to fetch and display data from the NASA API. Below are the code updates and features implemented in this project:
 
-## Available Scripts
+**Code Updates and Features:**
 
-In the project directory, you can run:
+    **State Storage Update:** Implemented the usage of React store (Zustand) to manage state storage for the API responses. Data fetched from the API is stored in the React store and made available throughout the application.
 
-### `npm start`
+    **React Router Integration:** Utilized React Router to create multiple pages within the application. The main page displays data fetched from the NASA API, while a second page allows users to view the same data stored in the React store.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    **Webpack Configuration:** Configured Webpack build for the React application instead of using create-react-app.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    **Zustand Integration:** Integrated Zustand for state management in the React application. Zustand is used to maintain API information, ensuring it is available throughout the app. API calls are made directly from the store.
 
-### `npm test`
+**Project Structure:
+SpringNasa (Spring Boot API app)**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    **pom.xml:** Maven configuration file for managing project dependencies and build settings.
 
-### `npm run build`
+    **SpringNasaApplication.java:** Entry point of the Spring Boot application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    **Springnasacontroller.java:** Controller class responsible for handling API requests and responses.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    **Springnasaresponse.java:** POJO class representing the response structure from the NASA API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    **Springnasaservice.java:** Service class responsible for making requests to the NASA API.
 
-### `npm run eject`
+**ReactApp2 (Reactjs app)**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    **App.js:** Main component handling routing between different pages of the React application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Routes.jsx: Defines the routes for navigating between different pages using React Router.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    **store.js:** Zustand store configuration for managing application state.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    **index.js:** Entry point of the React application, renders the main component.
 
-## Learn More
+    **App.test.js:** Unit test file for the main component.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    **SpringNasaComponent.jsx:** Component responsible for fetching and displaying data from the NASA API.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    **SpringNasaComponent.css:** CSS styles for the SpringNasaComponent.
 
-### Code Splitting
+    **SecondPage.jsx:** Additional page component to display data stored in the React store.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    **SecondPage.css**: CSS styles for the SecondPage component.
 
-### Analyzing the Bundle Size
+**Usage:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To run the application:
 
-### Making a Progressive Web App
+    Ensure you have Java and Maven installed for running the Spring Boot backend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    Navigate to the SpringNasa directory and run the Spring Boot application using the command:
 
-### Advanced Configuration
+    arduino
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+./mvnw spring-boot:run
 
-### Deployment
+Ensure you have Node.js and npm installed for running the React frontend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Navigate to the ReactApp2 directory and install dependencies using:
 
-### `npm run build` fails to minify
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Start the React development server using:
+
+sql
+
+    npm start
+
+    Access the application in your web browser at http://localhost:3000.
+
+**Contributors:**
+
+    Chaitanya Chikka
+
