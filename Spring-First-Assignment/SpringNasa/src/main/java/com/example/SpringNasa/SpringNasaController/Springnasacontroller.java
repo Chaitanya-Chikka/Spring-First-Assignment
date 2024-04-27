@@ -12,7 +12,7 @@ import com.example.SpringNasa.SpringNasaResponse.Springnasaresponse;
 import com.example.SpringNasa.SpringNasaService.Springnasaservice;
 
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
 @RestController
 public class Springnasacontroller {
 	
