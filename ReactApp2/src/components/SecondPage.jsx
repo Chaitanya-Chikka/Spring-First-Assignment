@@ -40,7 +40,7 @@ const SecondPage = () => {
                     <p className="explanation-font-white" >Explanation: {item.explanation}</p>
                 </div>
                 ))}
-            </div>c
+            </div>
         </section>
       </div>
     );

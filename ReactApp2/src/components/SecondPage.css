@@ -24,18 +24,13 @@
   }
   
   .hero{
-    /* display:center; */
     min-height: 400px;
     height: 100%;
     width: 100%;
     position:relative ;
     overflow: hidden;
-    /* background-color: black; */
-    /* background-attachment: scroll; */
-    /* object-fit: cover; */
     background-size:auto ;
     background-position:center ;
-    /* box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.2); */
   }
   
   .content{

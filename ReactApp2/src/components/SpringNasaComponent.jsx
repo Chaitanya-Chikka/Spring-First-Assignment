@@ -43,11 +43,12 @@ const SpringNasaComponent = ({ dataFromParent }) => {
   const fetchAPODImage = async (date) => {
     try {
       setLoading(true);
-    // let url2 = `https://api.nasa.gov/planetary/apod?api_key=LUaz0QCBUBaFXeRpCcOpBDLLg1Sb4wydlV8r0hU3`;
+    // let url = `https://api.nasa.gov/planetary/apod?api_key=LUaz0QCBUBaFXeRpCcOpBDLLg1Sb4wydlV8r0hU3`;
     let url = `http://localhost:8080/springapod`;
     
     if (date) {
-      url += `&date=${date}`;
+      const separator = url.includes('?') ? '&' : '?';
+      url += `${separator}date=${date}`;
     }
     else {
       const currentDate = new Date();
@@ -57,7 +58,10 @@ const SpringNasaComponent = ({ dataFromParent }) => {
       url += `&date=${formattedDate}`;
     }
     
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      method: 'GET',
+      mode: 'no-cors'
+    });
     // console.log(url);
     // console.log(response);
 
@@ -145,6 +149,10 @@ useEffect(() => {
     fetchAPODImage();
     fetchData();
   }, [formData]);
+
+  useEffect(() => {
+    fetchData();
+  }, [formData]);  
 
   return (
     <div>
